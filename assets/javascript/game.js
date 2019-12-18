@@ -4,8 +4,8 @@
 
 /* Player specific */
 var playerName;
-var playerMsgWelcome;
-var playerMsgGoodbye;
+var playerMsgWelcome="Hi";
+var playerMsgGoodbye="Bye";
 var playerWonMsg;
 var playerScore=0;
 var playerWins=0;
@@ -84,7 +84,24 @@ function newGame(){
     //Call playGame() function
 }
 
-function exitGame(){
-    //On Exit button click, alert "playerMsg2"
-    //Navigate Player to 
-}
+
+// Exit Game
+/* 12/18/19: Tested and committed. */
+/* 
+   On Exit button click, alert the contents of the "playerMsgGoodbye" variable.
+   Navigate player to the portfolio.html page of my Bootstrap Porfolio.
+*/
+
+$( "#exitgame" ).click(function() {
+
+    alert(playerMsgGoodbye);
+    window.location.href = 'https://plkgit.github.io/Bootstrap-Portfolio/portfolio.html';
+    })
+
+/* -------------------------------------------*/
+
+// console.log standard
+/*  
+    console.log("-------------------")
+    console.log("Message" or Variable)
+*/
