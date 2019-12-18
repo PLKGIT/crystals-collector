@@ -22,13 +22,13 @@
         <div id="banner">
             <h1>Crystals Collector</h1>
         </div>
-        <div><span id="welcome">Welcome!</span></div>
+        <div class="text-center"><span id="welcome" >Welcome!</span></div>
     </header>
     <div class="container">
         <main>
             <div class="row">
                 <div class="col">
-                    <div id="instructions">
+                    <div id="instructions" class="border-solid-1">
                         <h4>How to Play</h4>
                         <ol>
                             <li>You will be given a random number at the start of each game.
@@ -36,7 +36,7 @@
                             <li>
                                 Click on any the four (4) crystals to add points to your game score.
                             </li>
-                                <li>
+                            <li>
                                 You will not know the value of any crystal until after you click it and the value
                                 will change at the start of a new game.
                             </li>
@@ -48,27 +48,27 @@
                                 You'll lose the game whenever your score exceeds the random number.
                             </li>
                         </ol>
-                        <h5>Good luck collectors!</h5>
+                        <h5>Good luck!</h5>
                     </div>
                 </div>
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            <div>
-                                <h3>Match It!</h3>
+                            <div class="text-center">
+                                <h3 >Match It!</h3>
                                 <br>
-                                <span id="random">x</span>
+                                <span class="text-center" id="random">#</span>
                             </div>
                         </div>
                         <div class="col">
-                            <div>
-                                <h3>Your Score</h3>
+                            <div class="text-center">
+                                <h3 class="text-center">Game Score</h3>
                                 <br>
-                                <span id="score">x</span>
+                                <span class="text-center" id="score">#</span>
                             </div>
                         </div>
                     </div>
-                    <div class="row" id="crystals">
+                    <div class="row text-center" id="crystals">
                         <div class="col">
                             <span id="blue"><img src="assets/images/gem_blue.png" alt="Blue Crystal"
                                     class="image"></span>&nbsp;
@@ -80,30 +80,28 @@
                                     class="image"></span>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row border">
                         <div class="col">
-                            <div>
-                                <h5>Games Won: <span id="won">x</span></h5>
+                            <div class="text-center">
+                                <h5>Wins: <span id="won">x</span></h5>
                             </div>
                         </div>
                         <div class="col">
-                            <div>
-                                <h5>Games Lost: <span id="lost">x</span></h5>
+                            <div class="text-center">
+                                <h5>Losses: <span id="lost">x</span></h5>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
     </div>
     </main>
     </div>
 
     <footer>
-        <div>
-            <span id="copyright" class="text-left">Copyright &copy; 2019 Pamela L. Kelly</span>
-            <span class="btn btn-secondary btn-lg text-left">Exit</span> 
+        <div class="text-right">
+            <div id="copyright">Copyright &copy; 2019 Pamela L. Kelly</div>&nbsp;&nbsp;
+            <span class="btn btn-primary btn-lg">Exit</span>
         </div>
     </footer>
 
