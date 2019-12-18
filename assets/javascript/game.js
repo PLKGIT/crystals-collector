@@ -1,0 +1,2 @@
+// Crystals Collector Game JavaScript
+
