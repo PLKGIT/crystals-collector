@@ -18,7 +18,7 @@ var valCrystalGreen;
 var valCrystalRed;
 var valCrystalYellow;
 var arrCrystals=["assets/images/gem_blue.png","assets/images/gem_green.png","assets/images/gem_red.png","assets/images/gem_yellow.png",]
-var arrCongrats=["Congrats!","Way to go!","You're a boss!", "Great job!","Congratulations","Nailed it!","Way to play!" "Sweet!", "Oh yeah!", "What a whiz you are!"]
+var arrCongrats=["Congrats!","Way to go!","You're a boss!", "Great job!","Congratulations","Nailed it!","Way to play!", "Sweet!", "Oh yeah!", "What a whiz you are!"]
 
 /* DOM assignments */
 

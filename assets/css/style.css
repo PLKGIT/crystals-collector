@@ -3,22 +3,64 @@
   }
 
   body {
-
+    /* background: url("../images/primary_colors_bgnd.png");
+    background-repeat: no-repeat;
+    background-position: bottom; */
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
   }
 
-  header {
-
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
   }
 
-  .container {
+header {
+  margin: 0 auto;
+  background: lightskyblue;
+  padding-top:25px;
+  padding-bottom: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
 
+.container{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left:0;
+  margin: 0 auto;
+}
+
+#instructions{
+  margin:0;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 0;
+  padding-right:10px;
+  font-size: 14px;
+  background: lightskyblue;
+}
+
+ .image {
+  display: inline;
+  width: 100px;
+  height: auto;
   }
 
-  main {
-      
+  #crystals{
+    padding: 25px 0;
   }
 
-
-  footer {
-
+  #won{
+    padding-top:25px;
   }
+
+  #lost{
+    padding-top:25px;
+  }
+
+footer {
+  padding:25px 25px;
+  margin: 0 auto;
+  background: lightskyblue;
+}

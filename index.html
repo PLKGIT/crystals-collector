@@ -11,8 +11,7 @@
     <!--Meyerweb CSS Reset-->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!--My CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>PLK's Crystals Collector Game</title>
@@ -20,27 +19,100 @@
 
 <body>
     <header>
-
+        <div id="banner">
+            <h1>Crystals Collector</h1>
+        </div>
+        <div><span id="welcome">Welcome!</span></div>
     </header>
-
     <div class="container">
-
         <main>
+            <div class="row">
+                <div class="col">
+                    <div id="instructions">
+                        <h4>How to Play</h4>
+                        <ol>
+                            <li>You will be given a random number at the start of each game.
+                            </li>
+                            <li>
+                                Click on any the four (4) crystals to add points to your game score.
+                            </li>
+                                <li>
+                                You will not know the value of any crystal until after you click it and the value
+                                will change at the start of a new game.
+                            </li>
+                            <li>
+                                Win the game by clicking the right combination of crystals that will make your score
+                                equal to the random number.
+                            </li>
+                            <li>
+                                You'll lose the game whenever your score exceeds the random number.
+                            </li>
+                        </ol>
+                        <h5>Good luck collectors!</h5>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <h3>Match It!</h3>
+                                <br>
+                                <span id="random">x</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h3>Your Score</h3>
+                                <br>
+                                <span id="score">x</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="crystals">
+                        <div class="col">
+                            <span id="blue"><img src="assets/images/gem_blue.png" alt="Blue Crystal"
+                                    class="image"></span>&nbsp;
+                            <span id="green"><img src="assets/images/gem_green.png" alt="Green Crystal"
+                                    class="image"></span>&nbsp;
+                            <span id="red"><img src="assets/images/gem_red.png" alt="Red Crystal"
+                                    class="image"></span>&nbsp;
+                            <span id="yellow"><img src="assets/images/gem_yellow.png" alt="Yellow Crystal"
+                                    class="image"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div>
+                                <h5>Games Won: <span id="won">x</span></h5>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5>Games Lost: <span id="lost">x</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        </main>
+            </div>
 
     </div>
-
+    </main>
+    </div>
 
     <footer>
-
+        <div>
+            <span id="copyright" class="text-left">Copyright &copy; 2019 Pamela L. Kelly</span>
+            <span class="btn btn-secondary btn-lg text-left">Exit</span> 
+        </div>
     </footer>
 
     <!--All External JavaScript Files-->
     <!--jQuery JS file for Bootstrap-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
     <!--Bootstrap JS file-->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        type="text/javascript"></script>
     <!--My JavaScript file -->
     <script src="assets/javascript/game.js" type="text/javascript"></script>
 </body>

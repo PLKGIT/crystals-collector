@@ -31,9 +31,11 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
-	list-style: none;
-}
+/* Do not want to remove default styles for lists */
+/* ol, ul {
+	list-style: none; 
+} */
+
 blockquote, q {
 	quotes: none;
 }
