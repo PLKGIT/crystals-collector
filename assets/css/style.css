@@ -63,6 +63,7 @@ header h1{
   background: rgb(240, 161, 142);
   padding:5px 60px;
   font-size: 40px;
+  color: blue;
 }
 
 #score {
