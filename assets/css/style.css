@@ -61,7 +61,7 @@ header h1{
 #random {
   padding-top:10px;
   background: rgb(240, 161, 142);
-  padding:5px 60px;
+  padding:5px 40px;
   font-size: 40px;
   color: blue;
 }
@@ -69,7 +69,7 @@ header h1{
 #score {
   padding-top:10px;
   background: rgb(190, 240, 183);
-  padding:5px 60px;
+  padding:5px 40px;
   font-size: 40px;
 }
 

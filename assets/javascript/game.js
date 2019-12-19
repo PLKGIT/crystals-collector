@@ -10,7 +10,7 @@ $(document).ready(function () {
     var playerName;
     var playerMsgWelcome = "Hello Crystals Collector!";
     var playerMsgGoodbye = "Thank you for playing!";
-    var playerWonMsg="";
+    var playerWonMsg = "";
     var playerScore = 0;
     var playerWins = 0;
     var playerLosses = 0;
@@ -24,14 +24,14 @@ $(document).ready(function () {
     var arrCrystals = ["assets/images/gem_blue.png", "assets/images/gem_green.png", "assets/images/gem_red.png", "assets/images/gem_yellow.png",]
     var arrCongrats = ["Congrats!", "Way to go!", "You're a boss!", "Great job!", "Congratulations", "Nailed it!", "Way to play!", "Sweet!", "Oh yeah!", "What a whiz you are!"]
 
-// Initialize the game
-/* 12/18/19: Tested and committed. */
-/* 
-    Append contents of the "playerMsgWelcome" variable to the DOM (#welcome) in the header.
-    Append player stats to the DOM (#playerScore, #playerWins, #playerLoses).
-    Test to ensure the expected values are being appended to the DOM.
-    Call the gameNumber () function
-*/
+    // Initialize the game
+    /* 12/18/19: Tested and committed. */
+    /* 
+        Append contents of the "playerMsgWelcome" variable to the DOM (#welcome) in the header.
+        Append player stats to the DOM (#playerScore, #playerWins, #playerLoses).
+        Test to ensure the expected values are being appended to the DOM.
+        Call the gameNumber () function
+    */
 
     // console.log("-------Page fully loaded------------")
     // console.log("Ready")
@@ -59,125 +59,222 @@ $(document).ready(function () {
     //Call gameNumber() function
     $(gameNumbers);
 
+
+    /* -------------------------------------------*/
+
+    // Generate random numbers
+    /* 12/18/19: Tested and committed. */
+    /* 
+        Generate random number from 19-120 for game number and assign it to the "randomNumber" variable.
+            Append randomNumber to the DOM (#random).
+        Generate random numner between 1 and 12 for each crystal.
+            Assign each crystal's variable a random number.
+            Do NOT append the crystal values to the DOM.
+        Test to ensure none of the previous values changes after generating another variable's random number.
+        Call playGame () function.
+    */
+
+    function gameNumbers() {
+        //Generate Random Number for Game
+        randomNumber = Math.floor(Math.random() * 120) + 19;
+        // console.log("-------Random Number------------");
+        // console.log(randomNumber);
+        //Append the random game number to the DOM (#random)
+        document.getElementById('random').innerHTML = randomNumber;
+        // console.log("-------Random No. to DOM------------");
+        // console.log(randomNumber);
+        //Generate Random Number for Blue Crystal and assign it to "valCrystalBlue" variable
+        valCrystalBlue = Math.floor(Math.random() * 12) + 1;
+        // console.log("-------Random Number------------");
+        // console.log(randomNumber);
+        // console.log("-------Blue Crystal Value------------");
+        // console.log(valCrystalBlue);
+        //Generate Random Number for Green Crystal and assign it to "valCrystalGreen" variable
+        valCrystalGreen = Math.floor(Math.random() * 12) + 1;
+        // console.log("-------Random Number------------");
+        // console.log(randomNumber);
+        // console.log("-------Blue Crystal Value------------");
+        // console.log(valCrystalBlue);
+        // console.log("-------Green Crystal Value------------");
+        // console.log(valCrystalGreen);
+        //Generate Random Number for Red Crystal and assign it to "valCrystalRed" variable
+        valCrystalRed = Math.floor(Math.random() * 12) + 1;
+        // console.log("-------Random Number------------");
+        // console.log(randomNumber);
+        // console.log("-------Blue Crystal Value------------");
+        // console.log(valCrystalBlue);
+        // console.log("-------Green Crystal Value------------");
+        // console.log(valCrystalGreen);
+        // console.log("-------Red Crystal Value------------");
+        // console.log(valCrystalRed);
+        //Generate Random Number for Yellow Crystal and assign it to "valCrystalYellow" variable
+        valCrystalYellow = Math.floor(Math.random() * 12) + 1;
+        // console.log("-------Random Number------------");
+        // console.log(randomNumber);
+        // console.log("-------Blue Crystal Value------------");
+        // console.log(valCrystalBlue);
+        // console.log("-------Green Crystal Value------------");
+        // console.log(valCrystalGreen);
+        // console.log("-------Red Crystal Value------------");
+        // console.log(valCrystalRed);
+        // console.log("-------Yellow Crystal Value------------");
+        // console.log(valCrystalYellow);
+        return;
+    }
+    /* -------------------------------------------*/
+
+    // Play the Game
+    /* DATE: Tested and committed. */
+    /* 
+        //Compare playerScore to randomNumber
+            //If playerScore = randomNumber, call playerWon
+            //If playerScore > randomNUmber, call playerLost
+            //If playerScore < randonMumber, allow user to click on a crystal
+        //On Crystal click, add its associate random number to playerScore
+            //Update values on the DOM
+        //Compare playerScore to randomNumber
+            //If playerScore = randomNumber, call playerWon
+            //If playerScore > randomNUmber, call playerLost
+            //If playerScore < randonMumber, allow user to click on a crystal
     
-/* -------------------------------------------*/
+    */
 
-// Generate random numbers
-/* 12/18/19: Tested and committed. */
-/* 
-    Generate random number from 19-120 for game number and assign it to the "randomNumber" variable.
-        Append randomNumber to the DOM (#random).
-    Generate random numner between 1 and 12 for each crystal.
-        Assign each crystal's variable a random number.
-        Do NOT append the crystal values to the DOM.
-    Test to ensure none of the previous values changes after generating another variable's random number.
-    Call playGame () function.
-*/
+    $('#blue').click(function (event) {
+        // console.log("Blue Clicked");
+        if (playerScore === randomNumber) {
+            console.log("Player Won");
+            console.log("Score:");
+            console.log(playerScore);
+            playerWon();
+        } else if (playerScore > randomNumber) {
+            console.log("Player Lost");
+            console.log("Score:");
+            console.log(playerScore);
+            playerLost();
+        } else {
+            playerScore += valCrystalBlue;
+            console.log("Keep playing");
+            console.log("Crystal Value:");
+            console.log(valCrystalBlue);
+            console.log("Score:");
+            console.log(playerScore);
+            document.getElementById('score').innerHTML = playerScore;
+        }
 
-function gameNumbers() {
-    //Generate Random Number for Game
-    randomNumber = Math.floor(Math.random() * 120) + 19;
-    // console.log("-------Random Number------------");
-    // console.log(randomNumber);
-    //Append the random game number to the DOM (#random)
-    document.getElementById('random').innerHTML = randomNumber;
-    // console.log("-------Random No. to DOM------------");
-    // console.log(randomNumber);
-    //Generate Random Number for Blue Crystal and assign it to "valCrystalBlue" variable
-    valCrystalBlue = Math.floor(Math.random() * 12) + 1;
-    // console.log("-------Random Number------------");
-    // console.log(randomNumber);
-    // console.log("-------Blue Crystal Value------------");
-    // console.log(valCrystalBlue);
-    //Generate Random Number for Green Crystal and assign it to "valCrystalGreen" variable
-    valCrystalGreen = Math.floor(Math.random() * 12) + 1;
-    // console.log("-------Random Number------------");
-    // console.log(randomNumber);
-    // console.log("-------Blue Crystal Value------------");
-    // console.log(valCrystalBlue);
-    // console.log("-------Green Crystal Value------------");
-    // console.log(valCrystalGreen);
-    //Generate Random Number for Red Crystal and assign it to "valCrystalRed" variable
-    valCrystalRed = Math.floor(Math.random() * 12) + 1;
-    // console.log("-------Random Number------------");
-    // console.log(randomNumber);
-    // console.log("-------Blue Crystal Value------------");
-    // console.log(valCrystalBlue);
-    // console.log("-------Green Crystal Value------------");
-    // console.log(valCrystalGreen);
-    // console.log("-------Red Crystal Value------------");
-    // console.log(valCrystalRed);
-    //Generate Random Number for Yellow Crystal and assign it to "valCrystalYellow" variable
-    valCrystalYellow = Math.floor(Math.random() * 12) + 1;
-    // console.log("-------Random Number------------");
-    // console.log(randomNumber);
-    // console.log("-------Blue Crystal Value------------");
-    // console.log(valCrystalBlue);
-    // console.log("-------Green Crystal Value------------");
-    // console.log(valCrystalGreen);
-    // console.log("-------Red Crystal Value------------");
-    // console.log(valCrystalRed);
-    // console.log("-------Yellow Crystal Value------------");
-    // console.log(valCrystalYellow);
-}
+    })
 
-/* -------------------------------------------*/
+    $('#green').click(function (event) {
+        console.log("Green Clicked");
+        if (playerScore === randomNumber) {
+            console.log("Player Won");
+            console.log("Score:");
+            console.log(playerScore);
+            playerWon();
+        } else if (playerScore > randomNumber) {
+            console.log("Player Lost");
+            console.log("Score:");
+            console.log(playerScore);
+            playerLost();
+        } else {
+            playerScore += valCrystalGreen;
+            console.log("Keep playing");
+            console.log("Crystal Value:");
+            console.log(valCrystalGreen);
+            console.log("Score:");
+            console.log(playerScore);
+            document.getElementById('score').innerHTML = playerScore;
+        }
 
-function playGame() {
-    //Compare playerScore to randomNumber
-        //If playerScore = randomNumber, call playerWon
-        //If playerScore > randomNUmber, call playerLost
-        //If playerScore < randonMumber, allow user to click on a crystal
-    //On Crystal click, add its associate random number to playerScore
-        //Update values on the DOM
-    //Compare playerScore to randomNumber
-        //If playerScore = randomNumber, call playerWon
-        //If playerScore > randomNUmber, call playerLost
-        //If playerScore < randonMumber, allow user to click on a crystal
+    })
+    $('#red').click(function (event) {
+        // console.log("Red Clicked");
+        if (playerScore === randomNumber) {
+            console.log("Player Won");
+            console.log("Score:");
+            console.log(playerScore);
+            playerWon();
+        } else if (playerScore > randomNumber) {
+            console.log("Player Lost");
+            console.log("Score:");
+            console.log(playerScore);
+            playerLost();
+        } else {
+            playerScore += valCrystalRed;
+            console.log("Keep playing");
+            console.log("Crystal Value:");
+            console.log(valCrystalRed);
+            console.log("Score:");
+            console.log(playerScore);
+            document.getElementById('score').innerHTML = playerScore;
+        }
 
-}
+    })
 
-function playerWon() {
-    //Add 1 to playerWins
-    //Display updated playerWins counter in DOM:main
-    //Generate a random number between 0 and the length of arrCongrats - 1
-    //Retrieve a congratulations message from arrCongrats using the generated random number as the index
-    //Assign message to playerWonMsg
-    //Alert playerWonMsg
-    //Call newGame() function
-}
+    $('#yellow').click(function (event) {
+        // console.log("Yellow Clicked");
+        if (playerScore === randomNumber) {
+            console.log("Player Won");
+            console.log("Player Score:");
+            console.log(playerScore);
+            playerWon();
+        } else if (playerScore > randomNumber) {
+            console.log("Player Lost");
+            console.log("Player Score:");
+            console.log(playerScore);
+            playerLost();
+        } else {
+            playerScore += valCrystalYellow;
+            console.log("Keep playing");
+            console.log("Crystal Value:");
+            console.log(valCrystalYellow);
+            console.log("Player Score:");
+            console.log(playerScore);
+            document.getElementById('score').innerHTML = playerScore;
+        }
 
-function playerLost() {
-    //Add 1 to playerLosses
-    //Display updated playerLosses counter in DOM:main
-    //Alert "Sorry, better luck next time!"
-    //Call newGame() function
-}
+    })
 
-function newGame() {
-    //Reset playerScore =0
-    //Generate a random number between 19-120
-    //Assign random number to the randomNumber variable and display variable contents in DOM:main
-    //Generate 4 random numbers between 1-12 and assign one (1) each to valCrystalBlue, valCrystalGreen, valCrystalRed, and valCrystalGreen
-    //Do NOT display the crystals' random number values in the DOM
-    //Call playGame() function
-}
+    function playerWon() {
+        //Add 1 to playerWins
+        //Display updated playerWins counter in DOM:main
+        //Generate a random number between 0 and the length of arrCongrats - 1
+        //Retrieve a congratulations message from arrCongrats using the generated random number as the index
+        //Assign message to playerWonMsg
+        //Alert playerWonMsg
+        //Call newGame() function
+    }
+
+    function playerLost() {
+        //Add 1 to playerLosses
+        //Display updated playerLosses counter in DOM:main
+        //Alert "Sorry, better luck next time!"
+        //Call newGame() function
+    }
+
+    function newGame() {
+        //Reset playerScore =0
+        //Generate a random number between 19-120
+        //Assign random number to the randomNumber variable and display variable contents in DOM:main
+        //Generate 4 random numbers between 1-12 and assign one (1) each to valCrystalBlue, valCrystalGreen, valCrystalRed, and valCrystalGreen
+        //Do NOT display the crystals' random number values in the DOM
+        //Call playGame() function
+    }
 
 
-// Exit Game
-/* 12/18/19: Tested and committed. */
-/* 
-   On Exit button click, alert the contents of the "playerMsgGoodbye" variable.
-   Navigate player to the portfolio.html page of my Bootstrap Porfolio.
-*/
+    // Exit Game
+    /* 12/18/19: Tested and committed. */
+    /* 
+       On Exit button click, alert the contents of the "playerMsgGoodbye" variable.
+       Navigate player to the portfolio.html page of my Bootstrap Porfolio.
+    */
 
-$("#exitgame").click(function () {
+    $("#exitgame").click(function () {
 
-    alert(playerMsgGoodbye);
-    window.location.href = 'https://plkgit.github.io/Bootstrap-Portfolio/portfolio.html';
-})
+        alert(playerMsgGoodbye);
+        window.location.href = 'https://plkgit.github.io/Bootstrap-Portfolio/portfolio.html';
+    })
 
-/* -------------------------------------------*/
+    /* -------------------------------------------*/
 });
 
 
