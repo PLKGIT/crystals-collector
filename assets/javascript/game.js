@@ -142,14 +142,14 @@ $(document).ready(function () {
     $('#blue').click(function (event) {
         // console.log("Blue Clicked");
         if (playerScore === randomNumber) {
-            console.log("Player Won");
-            console.log("Score:");
-            console.log(playerScore);
+            // console.log("Player Won");
+            // console.log("Score:");
+            // console.log(playerScore);
             playerWon();
         } else if (playerScore > randomNumber) {
-            console.log("Player Lost");
-            console.log("Score:");
-            console.log(playerScore);
+            // console.log("Player Lost");
+            // console.log("Score:");
+            // console.log(playerScore);
             playerLost();
         } else {
             playerScore += valCrystalBlue;
@@ -164,24 +164,24 @@ $(document).ready(function () {
     })
 
     $('#green').click(function (event) {
-        console.log("Green Clicked");
+        // console.log("Green Clicked");
         if (playerScore === randomNumber) {
-            console.log("Player Won");
-            console.log("Score:");
-            console.log(playerScore);
+            // console.log("Player Won");
+            // console.log("Score:");
+            // console.log(playerScore);
             playerWon();
         } else if (playerScore > randomNumber) {
-            console.log("Player Lost");
-            console.log("Score:");
-            console.log(playerScore);
+            // console.log("Player Lost");
+            // console.log("Score:");
+            // console.log(playerScore);
             playerLost();
         } else {
             playerScore += valCrystalGreen;
-            console.log("Keep playing");
-            console.log("Crystal Value:");
-            console.log(valCrystalGreen);
-            console.log("Score:");
-            console.log(playerScore);
+            // console.log("Keep playing");
+            // console.log("Crystal Value:");
+            // console.log(valCrystalGreen);
+            // console.log("Score:");
+            // console.log(playerScore);
             document.getElementById('score').innerHTML = playerScore;
         }
 
@@ -189,22 +189,22 @@ $(document).ready(function () {
     $('#red').click(function (event) {
         // console.log("Red Clicked");
         if (playerScore === randomNumber) {
-            console.log("Player Won");
-            console.log("Score:");
-            console.log(playerScore);
+            // console.log("Player Won");
+            // console.log("Score:");
+            // console.log(playerScore);
             playerWon();
         } else if (playerScore > randomNumber) {
-            console.log("Player Lost");
-            console.log("Score:");
-            console.log(playerScore);
+            // console.log("Player Lost");
+            // console.log("Score:");
+            // console.log(playerScore);
             playerLost();
         } else {
             playerScore += valCrystalRed;
-            console.log("Keep playing");
-            console.log("Crystal Value:");
-            console.log(valCrystalRed);
-            console.log("Score:");
-            console.log(playerScore);
+            // console.log("Keep playing");
+            // console.log("Crystal Value:");
+            // console.log(valCrystalRed);
+            // console.log("Score:");
+            // console.log(playerScore);
             document.getElementById('score').innerHTML = playerScore;
         }
 
@@ -213,22 +213,22 @@ $(document).ready(function () {
     $('#yellow').click(function (event) {
         // console.log("Yellow Clicked");
         if (playerScore === randomNumber) {
-            console.log("Player Won");
-            console.log("Player Score:");
-            console.log(playerScore);
+            // console.log("Player Won");
+            // console.log("Player Score:");
+            // console.log(playerScore);
             playerWon();
         } else if (playerScore > randomNumber) {
-            console.log("Player Lost");
-            console.log("Player Score:");
-            console.log(playerScore);
+            // console.log("Player Lost");
+            // console.log("Player Score:");
+            // console.log(playerScore);
             playerLost();
         } else {
             playerScore += valCrystalYellow;
-            console.log("Keep playing");
-            console.log("Crystal Value:");
-            console.log(valCrystalYellow);
-            console.log("Player Score:");
-            console.log(playerScore);
+            // console.log("Keep playing");
+            // console.log("Crystal Value:");
+            // console.log("valCrystalYellow);
+            // console.log("Player Score:");
+            // console.log(playerScore);
             document.getElementById('score').innerHTML = playerScore;
         }
 
