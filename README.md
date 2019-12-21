@@ -76,7 +76,13 @@ Pam Kelly at [esq.kelly@gmail.com](mailto:esq.kelly@gmail.com)
 Full-Stack Coding Bootcamp through UCB Extension
 
 ### Completed Assignment URLs
-
+#### Github repository
+[Github Link](https://plkgit.github.io/unit-4-game/) at https://plkgit.github.io/unit-4-game/
+#### Deployed Game
+[Crystals Collector Game](https://github.com/PLKGIT/unit-4-game) deployed at https://github.com/PLKGIT/unit-4-game
+#### Portfolio.html in Bootstrap Portfolio demonstrating a link to the game
+[Bootstrap Porfolio with Link to Crystals Collector Game](https://plkgit.github.io/Bootstrap-Portfolio/portfolio.html) at 
+https://plkgit.github.io/Bootstrap-Portfolio/portfolio.html
 
 - - 
 Copyright &copy; 2019 Pamela L. Kelly
