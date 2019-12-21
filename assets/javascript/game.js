@@ -65,7 +65,6 @@ $(document).ready(function () {
             Assign each crystal's variable a random number.
             Do NOT append the crystal values to the DOM.
         Test to ensure none of the previous values changes after generating another variable's random number.
-        Call playGame () function.
     */
 
     function gameNumbers() {
@@ -130,9 +129,8 @@ $(document).ready(function () {
             //If playerScore = randomNumber, call playerWon
             //If playerScore > randomNUmber, call playerLost
             //If playerScore < randonMumber, allow user to click on a crystal
-    
     */
-
+    /* Blue Crystal Clicked*/
     $('#blue').click(function (event) {
         // console.log("Blue Clicked");
         if (playerScore === randomNumber) {
@@ -156,7 +154,7 @@ $(document).ready(function () {
         }
 
     })
-
+    /* Green Crystal Clicked*/
     $('#green').click(function (event) {
         // console.log("Green Clicked");
         if (playerScore === randomNumber) {
@@ -180,6 +178,7 @@ $(document).ready(function () {
         }
 
     })
+    /* Red Crystal Clicked*/
     $('#red').click(function (event) {
         // console.log("Red Clicked");
         if (playerScore === randomNumber) {
@@ -203,7 +202,7 @@ $(document).ready(function () {
         }
 
     })
-
+    /* Yellow Crystal Clicked*/
     $('#yellow').click(function (event) {
         // console.log("Yellow Clicked");
         if (playerScore === randomNumber) {
@@ -227,33 +226,94 @@ $(document).ready(function () {
         }
 
     })
+    /* -------------------------------------------*/
 
-    function playerWon() {
-        alert("You won!");
-        //Add 1 to playerWins
-        //Display updated playerWins counter in DOM:main
+    // Player Wins
+    /* DATE: Tested and committed. */
+    /* 
+        //Add 1 to playerWins variable
         //Generate a random number between 0 and the length of arrCongrats - 1
         //Retrieve a congratulations message from arrCongrats using the generated random number as the index
         //Assign message to playerWonMsg
         //Alert playerWonMsg
         //Call newGame() function
+    */
+
+    function playerWon() {
+        // Contents of playerWins before adding the win
+        console.log("-----Wins before counter updated");
+        console.log(playerWins);
+        // Add to player's win count
+        playerWins += 1;
+        console.log("-----Wins after counter updated");
+        console.log(playerWins);
+        // alert("You won!");
+        playerWonMsg = Math.floor(Math.random() * arrCongrats.length - 1) + 1;
+        alert(arrCongrats[playerWonMsg]);
+        newGame();
     }
 
-    function playerLost() {
-        alert("You lost!");
+    /* -------------------------------------------*/
+
+    // Player Loses
+    /* DATE: Tested and committed. */
+    /* 
         //Add 1 to playerLosses
-        //Display updated playerLosses counter in DOM:main
         //Alert "Sorry, better luck next time!"
         //Call newGame() function
+    */
+
+    function playerLost() {
+        // Contents of playerLosses before adding the loss
+        console.log("-----Losses before counter updated");
+        console.log(playerLosses);
+        // Add to player's win count
+        playerLosses += 1;
+        console.log("-----Losses after counter updated");
+        console.log(playerLosses);
+        alert("Better luck next time!");
+        newGame();
     }
 
+    /* -------------------------------------------*/
+
+    // New Game
+    /* DATE: Tested and committed. */
+    /* 
+       On win or loss, reset the playerScore to 0.
+       Update the DOM with the players's updated win/loss totals from the playerWins and playerLosses variables.
+       Call the gameNumbers() function.
+    */
+
     function newGame() {
-        //Reset playerScore =0
-        //Generate a random number between 19-120
-        //Assign random number to the randomNumber variable and display variable contents in DOM:main
-        //Generate 4 random numbers between 1-12 and assign one (1) each to valCrystalBlue, valCrystalGreen, valCrystalRed, and valCrystalGreen
-        //Do NOT display the crystals' random number values in the DOM
-        //Call playGame() function
+        // Contents of playerScore before reset
+        console.log("-----Score before reset");
+        console.log(playerScore);
+
+        //Reset playerScore = 0
+        playerScore = 0;
+
+        // Contents of playerScore before reset
+        console.log("-----Score after reset");
+        console.log(playerScore);
+
+         //Update playerScore to DOM (#score)
+        document.getElementById('score').innerHTML = playerScore;
+        // console.log("-------playerScore------------")
+        // console.log(score)
+
+        //Update playerWins in the DOM (#won)
+        document.getElementById('win').innerHTML = playerWins;
+        // console.log("-------Total Wins------------")
+        // console.log(won)
+
+        //Update playerLosses in the DOM (#loss)
+        document.getElementById('loss').innerHTML = playerLosses;
+        // console.log("-------Total Losses------------")
+        // console.log(lost)
+
+        //Call gameNumber() function
+        $(gameNumbers);
     }
 
 
