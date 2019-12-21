@@ -7,10 +7,8 @@ $(document).ready(function () {
     // Global Variables
 
     /* Player specific */
-    var playerName;
-    // var playerMsgWelcome = "Hello Crystals Collector!";
     var playerMsgGoodbye = "Thank you for playing!";
-    var playerWonMsg = "";
+    var playerWonMsg;
     var playerScore = 0;
     var playerWins = 0;
     var playerLosses = 0;
@@ -21,39 +19,38 @@ $(document).ready(function () {
     var valCrystalGreen;
     var valCrystalRed;
     var valCrystalYellow;
-    var arrCrystals = ["assets/images/gem_blue.png", "assets/images/gem_green.png", "assets/images/gem_red.png", "assets/images/gem_yellow.png",]
+    // var arrCrystals = ["assets/images/gem_blue.png", "assets/images/gem_green.png", "assets/images/gem_red.png", "assets/images/gem_yellow.png",]
     var arrCongrats = ["Congrats!", "Way to go!", "You're a boss!", "Great job!", "Congratulations", "Nailed it!", "Way to play!", "Sweet!", "Oh yeah!", "What a whiz you are!"]
 
     // Initialize the game
     /* 12/18/19: Tested and committed. */
     /* 
-        Append player stats to the DOM (#playerScore, #playerWins, #playerLoses).
+        Display player stats in the DOM (#playerScore, #playerWins, #playerLoses).
+        On the initial load, all should be equal to 0.
         Test to ensure the expected values are being appended to the DOM.
-        Call the gameNumber () function
+        Call the gameNumber () function.
     */
 
     // console.log("-------Page fully loaded------------")
     // console.log("Ready")
 
-    //Append playerScore to DOM (#score)
-    $('#score').append(playerScore);
+    //Display playerScore to DOM (#score)
+    document.getElementById('score').innerHTML = playerScore;
     // console.log("-------playerScore------------")
     // console.log(score)
 
-    //Append playerWins to DOM (#won)
-    $('#won').append(playerWins);
+    //Display playerWins to DOM (#won)
+    document.getElementById('won').innerHTML = playerWins;
     // console.log("-------Total Wins------------")
     // console.log(won)
 
     //Append playerWins to DOM (#won)
-    $('#lost').append(playerLosses);
+    document.getElementById('lost').innerHTML = playerLosses;
     // console.log("-------Total Losses------------")
     // console.log(lost)
 
     //Call gameNumber() function
     $(gameNumbers);
-
-
     /* -------------------------------------------*/
 
     // Generate random numbers
@@ -70,8 +67,8 @@ $(document).ready(function () {
     function gameNumbers() {
         //Generate Random Number for Game
         randomNumber = Math.floor(Math.random() * 120) + 19;
-        // console.log("-------Random Number------------");
-        // console.log(randomNumber);
+        console.log("-------Random Number------------");
+        console.log(randomNumber);
         //Append the random game number to the DOM (#random)
         document.getElementById('random').innerHTML = randomNumber;
         // console.log("-------Random No. to DOM------------");
@@ -145,11 +142,11 @@ $(document).ready(function () {
             playerLost();
         } else {
             playerScore += valCrystalBlue;
-            console.log("Keep playing");
-            console.log("Crystal Value:");
-            console.log(valCrystalBlue);
-            console.log("Score:");
-            console.log(playerScore);
+            // console.log("Keep playing");
+            // console.log("Crystal Value:");
+            // console.log(valCrystalBlue);
+            // console.log("Score:");
+            // console.log(playerScore);
             document.getElementById('score').innerHTML = playerScore;
         }
 
@@ -224,12 +221,11 @@ $(document).ready(function () {
             // console.log(playerScore);
             document.getElementById('score').innerHTML = playerScore;
         }
-
     })
     /* -------------------------------------------*/
 
     // Player Wins
-    /* DATE: Tested and committed. */
+    /* 12/20/19: Tested and committed. */
     /* 
         //Add 1 to playerWins variable
         //Generate a random number between 0 and the length of arrCongrats - 1
@@ -241,61 +237,63 @@ $(document).ready(function () {
 
     function playerWon() {
         // Contents of playerWins before adding the win
-        console.log("-----Wins before counter updated");
-        console.log(playerWins);
+        // console.log("-----Wins before counter updated");
+        // console.log(playerWins);
         // Add to player's win count
-        playerWins += 1;
-        console.log("-----Wins after counter updated");
-        console.log(playerWins);
+        playerWins = playerWins + 1;
+        // console.log("-----Wins after counter updated");
+        // console.log(playerWins);
         // alert("You won!");
         playerWonMsg = Math.floor(Math.random() * arrCongrats.length - 1) + 1;
         alert(arrCongrats[playerWonMsg]);
-        newGame();
+        $(newGame);
     }
 
     /* -------------------------------------------*/
 
     // Player Loses
-    /* DATE: Tested and committed. */
+    /* 12/20/19: Tested and committed. */
     /* 
         //Add 1 to playerLosses
         //Alert "Sorry, better luck next time!"
+        //Test to make sure all updates are occuring as expected.
         //Call newGame() function
     */
 
     function playerLost() {
         // Contents of playerLosses before adding the loss
-        console.log("-----Losses before counter updated");
-        console.log(playerLosses);
+        // console.log("-----Losses before counter updated");
+        // console.log(playerLosses);
         // Add to player's win count
-        playerLosses += 1;
-        console.log("-----Losses after counter updated");
-        console.log(playerLosses);
+        playerLosses = playerLosses + 1;
+        // console.log("-----Losses after counter updated");
+        // console.log(playerLosses);
         alert("Better luck next time!");
-        newGame();
+        $(newGame);
     }
 
     /* -------------------------------------------*/
 
     // New Game
-    /* DATE: Tested and committed. */
+    /* 12/20/19: Tested and committed. */
     /* 
        On win or loss, reset the playerScore to 0.
        Update the DOM with the players's updated win/loss totals from the playerWins and playerLosses variables.
+       Test to make sure all updates are occuring as expected.
        Call the gameNumbers() function.
     */
 
     function newGame() {
         // Contents of playerScore before reset
-        console.log("-----Score before reset");
-        console.log(playerScore);
+        // console.log("-----Score before reset");
+        // console.log(playerScore);
 
         //Reset playerScore = 0
         playerScore = 0;
 
         // Contents of playerScore before reset
-        console.log("-----Score after reset");
-        console.log(playerScore);
+        // console.log("-----Score after reset");
+        // console.log(playerScore);
 
          //Update playerScore to DOM (#score)
         document.getElementById('score').innerHTML = playerScore;
@@ -303,12 +301,12 @@ $(document).ready(function () {
         // console.log(score)
 
         //Update playerWins in the DOM (#won)
-        document.getElementById('win').innerHTML = playerWins;
+        document.getElementById('won').innerHTML = playerWins;
         // console.log("-------Total Wins------------")
         // console.log(won)
 
         //Update playerLosses in the DOM (#loss)
-        document.getElementById('loss').innerHTML = playerLosses;
+        document.getElementById('lost').innerHTML = playerLosses;
         // console.log("-------Total Losses------------")
         // console.log(lost)
 
