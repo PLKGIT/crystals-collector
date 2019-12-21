@@ -3,33 +3,32 @@
   }
 
   body {
-    /* background: url("../images/primary_colors_bgnd.png");
-    background-repeat: no-repeat;
-    background-position: bottom; */
     background-color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    color:blue;
-  }
+    font-size: 16px;
+    background: url("../images/primary_colors_bgnd.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
-    color:blue;
   }
 
 header {
   margin: 0 auto;
   background: lightskyblue;
   padding-top:25px;
-  padding-bottom: 16px;
+  padding-bottom: 12px;
   padding-left: 25px;
   padding-right: 25px;
-  border-bottom: 2px solid blue ridge;
+  border-bottom: 2px solid #0077f7 ridge;
 
 }
 header h1{
   text-shadow: rgb(244, 247, 92) 1px 1px;
   font-weight: bold;
+  color:#0077f7;
 }
 
 #welcome {
@@ -40,41 +39,39 @@ header h1{
 .container{
   padding-top: 25px;
   padding-bottom: 25px;
-  padding-left:0;
+  /* padding-left:0; */
   margin: 0 auto;
 }
-
+#game {
+  color:#0077f7;
+}
+#game h3 {
+  color: white;
+}
 #instructions{
-  margin-right:25px;
-  padding-top: 25px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right:10px;
-  font-size: 16px;
-  color: blue;
-  /* background: rgb(190, 240, 183); */
-  float: left;
-  overflow: visible;
+  color: #0077f7;
   line-height: 1.75em;
 }
 #instructions .caution{
   color:red;
   font-weight: bold;
 }
+#instructions > h1, h2, h3, h4, h5, h6 {
+  color: #0077f7;
+}
 
 #random {
-  padding-top:10px;
-  background: rgb(240, 161, 142);
-  padding:5px 40px;
+  padding:3px 40px;
   font-size: 40px;
-  color: blue;
+  color: #0077f7;
+  border: solid 1px red;
 }
 
 #score {
-  padding-top:10px;
-  background: rgb(190, 240, 183);
-  padding:5px 40px;
+  background: lightblue;
+  padding:3px 40px;
   font-size: 40px;
+  border: solid 1px #0077f7;
 }
 
  .image {
@@ -90,15 +87,15 @@ header h1{
   }
 
   #won{
-    padding-top:35px;
-    font-size: 20px;
+    padding-top:40px;
+    font-size: 22px;
     font-weight: bolder;
     color:green;
   }
 
   #lost{
-    padding-top:35px;
-    font-size: 20px;
+    padding-top:40px;
+    font-size: 22px;
     font-weight: bolder;
     color: red;
   }
@@ -107,12 +104,11 @@ footer {
   padding:25px 25px;
   margin: 0 auto;
   background: lightskyblue;
-  border-top: 2px solid blue ridge;
+  border-top: 2px solid #0077f7 ridge;
 }
 
 #copyright{
 display: inline;
 text-align: center;
-font-size: 18px;
-
+color: #0077f7;
 }

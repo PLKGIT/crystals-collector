@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     /* Player specific */
     var playerName;
-    var playerMsgWelcome = "Hello Crystals Collector!";
+    // var playerMsgWelcome = "Hello Crystals Collector!";
     var playerMsgGoodbye = "Thank you for playing!";
     var playerWonMsg = "";
     var playerScore = 0;
@@ -27,7 +27,6 @@ $(document).ready(function () {
     // Initialize the game
     /* 12/18/19: Tested and committed. */
     /* 
-        Append contents of the "playerMsgWelcome" variable to the DOM (#welcome) in the header.
         Append player stats to the DOM (#playerScore, #playerWins, #playerLoses).
         Test to ensure the expected values are being appended to the DOM.
         Call the gameNumber () function
@@ -35,11 +34,6 @@ $(document).ready(function () {
 
     // console.log("-------Page fully loaded------------")
     // console.log("Ready")
-
-    //Append welcome message to header
-    $('#welcome').append(playerMsgWelcome);
-    // console.log("-------playerMsgWelcome------------")
-    // console.log(playerMsgWelcome)
 
     //Append playerScore to DOM (#score)
     $('#score').append(playerScore);
@@ -235,6 +229,7 @@ $(document).ready(function () {
     })
 
     function playerWon() {
+        alert("You won!");
         //Add 1 to playerWins
         //Display updated playerWins counter in DOM:main
         //Generate a random number between 0 and the length of arrCongrats - 1
@@ -245,6 +240,7 @@ $(document).ready(function () {
     }
 
     function playerLost() {
+        alert("You lost!");
         //Add 1 to playerLosses
         //Display updated playerLosses counter in DOM:main
         //Alert "Sorry, better luck next time!"
@@ -276,27 +272,3 @@ $(document).ready(function () {
 
     /* -------------------------------------------*/
 });
-
-
-
-// Optional Function Pseudocode
-// These are optional, which I will code in the event I have enough time to code them by Sunday.
-
-
-function promptPlayer() {
-    //Prompt player for his or her name and assign to playerName
-    //Test input for alpha characters
-    //If alpha characters
-    //Set playerMsgWelcome to "Welcome " + playerName + "!"
-    //Set playerMsgGoodbye to "Goodbye and thanks for playing " + playerName + "!"
-    //If null or non-alpha
-    //Set playerMsgWelcome to "Welcome!"
-    //Set playerMsgGoodbye to 
-    //Call initSession() function "Goodbye and thanks for playing!"
-}
-
-// console.log standard
-/*
-    console.log("-------------------")
-    console.log("Message" or Variable)
-*/

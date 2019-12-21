@@ -22,91 +22,99 @@
         <div id="banner">
             <h1>Crystals Collector</h1>
         </div>
-        <div class="text-center">
-            <span id="welcome"></span>
-        </div>
     </header>
-    <div class="container">
-        <main>
-            <div class="row">
-                <div class="col">
-                    <div id="instructions" class="border-solid-1">
-                        <div class="card bg-warning" style="width: 18rem;">
-                            <div class="card-header text-white text-center">
-                              <h3>How to Play</h3>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                              <li class="list-group-item">A random number is generated at the start of each game</li>
-                              <li class="list-group-item">Click on any of the four (4) crystals on the right to add points to your score.</li>
-                              <li class="list-group-item">You will not know the value of any crystal until after you click it and the value
-                                of each crystal will change at the start of each new game.</li>
-                                <li class="list-group-item">Win the game by clicking the right combination of crystals whose values, when summed, equal the random number.</li>
-                                <li class="list-group-item"><span class="caution">Caution:</span> You'll lose the game whenever your score exceeds the random number.</li>
-                            </ul>
-                            <div class="card-footer text-white text-center">
-                                <h4>Good Luck!</h4>
-                              </div>
-                          </div>
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center">
+            <div id="game" class="col-auto mb-3">
+                <div class="card " style='width: 30rem;'>
+                    <div class="card-header bg-primary text-center text-white">
+                        <h3>Let's Collect Some Crystals!</h3>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <div class="text-center">
-                                <h3 >Match It!</h3>
-                                <br>
-                                <span class="text-center" id="random"></span>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="text-center mt-3">
+                                    <h4>Match It!</h4>
+                                    <br>
+                                    <span class="text-center" id="random"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="text-center">
+                                    <h4 class="text-center mt-3">Score</h4>
+                                    <br>
+                                    <span class="text-center" id="score"></span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="text-center">
-                                <h3 class="text-center">Score</h3>
-                                <br>
-                                <span class="text-center" id="score"></span>
+                        <div class="row text-center" id="crystals">
+                            <div class="col-lg-12">
+                                <span id="blue"><img src="assets/images/gem_blue.png" alt="Blue Crystal"
+                                        class="image"></span>&nbsp;
+                                <span id="green"><img src="assets/images/gem_green.png" alt="Green Crystal"
+                                        class="image"></span>&nbsp;
+                                <span id="red"><img src="assets/images/gem_red.png" alt="Red Crystal"
+                                        class="image"></span>&nbsp;
+                                <span id="yellow"><img src="assets/images/gem_yellow.png" alt="Yellow Crystal"
+                                        class="image"></span>
                             </div>
                         </div>
-                    </div>
-                    <div class="row text-center" id="crystals">
-                        <div class="col">
-                            <span id="blue"><img src="assets/images/gem_blue.png" alt="Blue Crystal"
-                                    class="image"></span>&nbsp;
-                            <span id="green"><img src="assets/images/gem_green.png" alt="Green Crystal"
-                                    class="image"></span>&nbsp;
-                            <span id="red"><img src="assets/images/gem_red.png" alt="Red Crystal"
-                                    class="image"></span>&nbsp;
-                            <span id="yellow"><img src="assets/images/gem_yellow.png" alt="Yellow Crystal"
-                                    class="image"></span>
-                        </div>
-                    </div>
-                    <div class="row border">
-                        <div class="col">
-                            <div class="text-center">
-                                <h5>Wins: <span id="won"></span></h5>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="text-center">
-                                <h5>Losses: <span id="lost"></span></h5>
+                        <div class="card-footer text-white text-center">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="text-center">
+                                        <h5>Wins: <span id="won"></span></h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="text-center">
+                                        <h5>Losses: <span id="lost"></span></h5>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div id="instructions" class="col-auto mb-3">
+                <div class="card bg-warning" style='width: 22rem;'>
+                    <div class="card-header text-center">
+                        <h3>How to Play</h3>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">A random number is generated at the start of each game</li>
+                        <li class="list-group-item">Click on any of the four (4) crystals on the left to add points to
+                            your score.</li>
+                        <li class="list-group-item">You will not know the value of any crystal until after you click it
+                            and the value
+                            of each crystal will change at the start of each new game.</li>
+                        <li class="list-group-item">Win the game by clicking the right combination of crystals whose
+                            values, when summed, equal the random number.</li>
+                        <li class="list-group-item"><span class="caution">Caution:</span> You'll lose the game whenever
+                            your score exceeds the random number.</li>
+                    </ul>
+                    <div class="card-footer text-white text-center">
+                        <h4>Good Luck!</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </main>
+
+
     </div>
 
     <footer>
         <div class>
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-lg-11 col-sm-6">
                     <div class="text-left">
                         <div id="copyright">Copyright &copy; 2019 Pamela L. Kelly</div>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <div>
-                        <div id="exitgame" class="btn btn-primary btn-lg text-right">Exit</div>
+                <div class="col-lg-1 col-sm-6">
+                    <div class= "text-right">
+                        <div id="exitgame" class="btn btn-primary btn-md text-right">Exit</div>
                     </div>
                 </div>
             </div>
