@@ -12,6 +12,7 @@ $(document).ready(function () {
     var playerScore = 0;
     var playerWins = 0;
     var playerLosses = 0;
+    var playerTemp = 0;
 
     /* Game specific */
     var randomNumber;
@@ -21,6 +22,7 @@ $(document).ready(function () {
     var valCrystalYellow;
     // var arrCrystals = ["assets/images/gem_blue.png", "assets/images/gem_green.png", "assets/images/gem_red.png", "assets/images/gem_yellow.png",]
     var arrCongrats = ["Congrats!", "Way to go!", "You're a boss!", "Great job!", "Congratulations", "Nailed it!", "Way to play!", "Sweet!", "Oh yeah!", "What a whiz you are!"]
+    var msgArrIndex;
 
     // Initialize the game
     /* 12/18/19: Tested and committed. */
@@ -67,8 +69,8 @@ $(document).ready(function () {
     function gameNumbers() {
         //Generate Random Number for Game
         randomNumber = Math.floor(Math.random() * 120) + 19;
-        console.log("-------Random Number------------");
-        console.log(randomNumber);
+        // console.log("-------Random Number------------");
+        // console.log(randomNumber);
         //Append the random game number to the DOM (#random)
         document.getElementById('random').innerHTML = randomNumber;
         // console.log("-------Random No. to DOM------------");
@@ -113,139 +115,113 @@ $(document).ready(function () {
     }
     /* -------------------------------------------*/
 
-    // Play the Game
-    /* DATE: Tested and committed. */
+    // Listen for crystal click events
+    /* 12/20/19: Tested and committed. */
     /* 
-        //Compare playerScore to randomNumber
-            //If playerScore = randomNumber, call playerWon
-            //If playerScore > randomNUmber, call playerLost
-            //If playerScore < randonMumber, allow user to click on a crystal
-        //On Crystal click, add its associate random number to playerScore
-            //Update values on the DOM
-        //Compare playerScore to randomNumber
-            //If playerScore = randomNumber, call playerWon
-            //If playerScore > randomNUmber, call playerLost
-            //If playerScore < randonMumber, allow user to click on a crystal
+        //On click, set the playerTemp variable = to the respective crystal's value variable.
+        //Call the evaluateScore() function.
     */
     /* Blue Crystal Clicked*/
     $('#blue').click(function (event) {
         // console.log("Blue Clicked");
-        if (playerScore === randomNumber) {
-            // console.log("Player Won");
-            // console.log("Score:");
-            // console.log(playerScore);
-            playerWon();
-        } else if (playerScore > randomNumber) {
-            // console.log("Player Lost");
-            // console.log("Score:");
-            // console.log(playerScore);
-            playerLost();
-        } else {
-            playerScore += valCrystalBlue;
-            // console.log("Keep playing");
-            // console.log("Crystal Value:");
-            // console.log(valCrystalBlue);
-            // console.log("Score:");
-            // console.log(playerScore);
-            document.getElementById('score').innerHTML = playerScore;
-        }
-
+        playerTemp = valCrystalBlue;
+        $(evaluateScore);
     })
+
     /* Green Crystal Clicked*/
     $('#green').click(function (event) {
         // console.log("Green Clicked");
-        if (playerScore === randomNumber) {
-            // console.log("Player Won");
-            // console.log("Score:");
-            // console.log(playerScore);
-            playerWon();
-        } else if (playerScore > randomNumber) {
-            // console.log("Player Lost");
-            // console.log("Score:");
-            // console.log(playerScore);
-            playerLost();
-        } else {
-            playerScore += valCrystalGreen;
-            // console.log("Keep playing");
-            // console.log("Crystal Value:");
-            // console.log(valCrystalGreen);
-            // console.log("Score:");
-            // console.log(playerScore);
-            document.getElementById('score').innerHTML = playerScore;
-        }
-
+        playerTemp = valCrystalGreen;
+        $(evaluateScore);
     })
+
     /* Red Crystal Clicked*/
     $('#red').click(function (event) {
         // console.log("Red Clicked");
-        if (playerScore === randomNumber) {
-            // console.log("Player Won");
-            // console.log("Score:");
-            // console.log(playerScore);
-            playerWon();
-        } else if (playerScore > randomNumber) {
-            // console.log("Player Lost");
-            // console.log("Score:");
-            // console.log(playerScore);
-            playerLost();
-        } else {
-            playerScore += valCrystalRed;
-            // console.log("Keep playing");
-            // console.log("Crystal Value:");
-            // console.log(valCrystalRed);
-            // console.log("Score:");
-            // console.log(playerScore);
-            document.getElementById('score').innerHTML = playerScore;
-        }
-
+        playerTemp = valCrystalRed;
+        $(evaluateScore);
     })
+
     /* Yellow Crystal Clicked*/
     $('#yellow').click(function (event) {
         // console.log("Yellow Clicked");
+        playerTemp = valCrystalYellow;
+        $(evaluateScore);
+    })
+    /* -------------------------------------------*/
+
+    // Evaluate the Player's Score after Click
+    /* 12/20/19: Tested and committed. */
+    /* 
+        //Compare playerScore to randomNumber
+            //If playerScore = randomNumber, call playerWon() function
+            //If playerScore > randomNUmber, call playerLost() function
+            //If playerScore < randonMumber, add playerTemp to the player's Score
+                //Display updated playerScore to the DOM (#score)
+                //Let the player continue to play
+    */
+    function evaluateScore (){
+        //Check to see whether player won
+            //If a win, end play by calling playerWon() function
         if (playerScore === randomNumber) {
             // console.log("Player Won");
             // console.log("Player Score:");
             // console.log(playerScore);
-            playerWon();
+            $(playerWon);
+        //Check to see whether player lost
+            //If a loss, end play by calling playerLost() function
         } else if (playerScore > randomNumber) {
             // console.log("Player Lost");
             // console.log("Player Score:");
             // console.log(playerScore);
-            playerLost();
+            $(playerLost);
+        //If no win or loss
+            //Add the crystal's value (stored in the playerTemp variable) to the playerScore variable
+            //Display the player's score in the DOM
+            //Let the player keep playing
         } else {
-            playerScore += valCrystalYellow;
+            playerScore += playerTemp;
             // console.log("Keep playing");
-            // console.log("Crystal Value:");
-            // console.log("valCrystalYellow);
+            // console.log("Player temp:");
+            // console.log(playerTemp);
             // console.log("Player Score:");
             // console.log(playerScore);
             document.getElementById('score').innerHTML = playerScore;
         }
-    })
+    }
     /* -------------------------------------------*/
 
     // Player Wins
     /* 12/20/19: Tested and committed. */
     /* 
         //Add 1 to playerWins variable
-        //Generate a random number between 0 and the length of arrCongrats - 1
-        //Retrieve a congratulations message from arrCongrats using the generated random number as the index
-        //Assign message to playerWonMsg
-        //Alert playerWonMsg
+        //Generate a random number between 0 and the length of arrCongrats - 1 and store in msgArrayIndex variable
+        //Retrieve a congratulations message from arrCongrats using the contents of msgArrayIndex as the index
+        //Assign the retrieved message to playerWonMsg variable
+        //Alert congratulations message
+        //Test to make sure all updates are occuring as expected.
         //Call newGame() function
     */
 
     function playerWon() {
         // Contents of playerWins before adding the win
-        // console.log("-----Wins before counter updated");
+        // console.log("-----Wins before counter updated---");
         // console.log(playerWins);
-        // Add to player's win count
+        // Add 1 to player's win count
         playerWins = playerWins + 1;
-        // console.log("-----Wins after counter updated");
+        // console.log("-----Wins after counter updated---");
         // console.log(playerWins);
         // alert("You won!");
-        playerWonMsg = Math.floor(Math.random() * arrCongrats.length - 1) + 1;
-        alert(arrCongrats[playerWonMsg]);
+        msgArrIndex = Math.floor(Math.random() * arrCongrats.length - 1) + 1;
+        // console.log("-----Random Arr Index----");
+        // console.log(msgArrIndex);
+        // console.log("----- Message at Random Index----");
+        // console.log(arrCongrats[msgArrIndex]);
+        //Assign the message from arrCongrats at the randomly generated index to playerWonMsg variable
+        playerWonMsg=(arrCongrats[msgArrIndex]);
+        //Alert the message
+        alert(playerWonMsg);
+        //Call newGame() function
         $(newGame);
     }
 
@@ -254,7 +230,7 @@ $(document).ready(function () {
     // Player Loses
     /* 12/20/19: Tested and committed. */
     /* 
-        //Add 1 to playerLosses
+        //Add 1 to player's loss count
         //Alert "Sorry, better luck next time!"
         //Test to make sure all updates are occuring as expected.
         //Call newGame() function
@@ -262,13 +238,15 @@ $(document).ready(function () {
 
     function playerLost() {
         // Contents of playerLosses before adding the loss
-        // console.log("-----Losses before counter updated");
+        // console.log("-----Losses before counter updated---");
         // console.log(playerLosses);
         // Add to player's win count
         playerLosses = playerLosses + 1;
-        // console.log("-----Losses after counter updated");
+        // console.log("-----Losses after counter updated---");
         // console.log(playerLosses);
-        alert("Better luck next time!");
+        //Alert a sorry you lost message
+        alert("Sorry, but you lost.  Better luck next time!");
+        //Call newGame() function
         $(newGame);
     }
 
@@ -284,11 +262,23 @@ $(document).ready(function () {
     */
 
     function newGame() {
+
+        // Contents of playerTemp before reset
+        // console.log("-----Temp before reset");
+        // console.log(playerTemp);
+
+        //Reset playerTemp
+        playerTemp = 0;
+
+        // Contents of playerTemp after reset
+        // console.log("-----Temp after reset");
+        // console.log(playerTemp);
+
         // Contents of playerScore before reset
         // console.log("-----Score before reset");
         // console.log(playerScore);
 
-        //Reset playerScore = 0
+        //Reset playerScore
         playerScore = 0;
 
         // Contents of playerScore before reset
