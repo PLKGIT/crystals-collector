@@ -125,6 +125,7 @@ $(document).ready(function () {
     $('#blue').click(function (event) {
         // console.log("Blue Clicked");
         playerTemp = valCrystalBlue;
+        playerScore += playerTemp;
         $(evaluateScore);
     })
 
@@ -132,6 +133,7 @@ $(document).ready(function () {
     $('#green').click(function (event) {
         // console.log("Green Clicked");
         playerTemp = valCrystalGreen;
+        playerScore += playerTemp;
         $(evaluateScore);
     })
 
@@ -139,6 +141,7 @@ $(document).ready(function () {
     $('#red').click(function (event) {
         // console.log("Red Clicked");
         playerTemp = valCrystalRed;
+        playerScore += playerTemp;
         $(evaluateScore);
     })
 
@@ -146,12 +149,14 @@ $(document).ready(function () {
     $('#yellow').click(function (event) {
         // console.log("Yellow Clicked");
         playerTemp = valCrystalYellow;
+        playerScore += playerTemp;
         $(evaluateScore);
     })
     /* -------------------------------------------*/
 
     // Evaluate the Player's Score after Click
     /* 12/20/19: Tested and committed. */
+    /* 01/05/20: Fixed a bug requiring user to click an extra time before they get a game won or lost alert.
     /* 
         //Compare playerScore to randomNumber
             //If playerScore = randomNumber, call playerWon() function
@@ -167,6 +172,7 @@ $(document).ready(function () {
             // console.log("Player Won");
             // console.log("Player Score:");
             // console.log(playerScore);
+            document.getElementById('score').innerHTML = playerScore;
             $(playerWon);
         //Check to see whether player lost
             //If a loss, end play by calling playerLost() function
@@ -174,13 +180,13 @@ $(document).ready(function () {
             // console.log("Player Lost");
             // console.log("Player Score:");
             // console.log(playerScore);
+            document.getElementById('score').innerHTML = playerScore;
             $(playerLost);
         //If no win or loss
             //Add the crystal's value (stored in the playerTemp variable) to the playerScore variable
             //Display the player's score in the DOM
             //Let the player keep playing
         } else {
-            playerScore += playerTemp;
             // console.log("Keep playing");
             // console.log("Player temp:");
             // console.log(playerTemp);
