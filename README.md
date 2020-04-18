@@ -9,9 +9,18 @@ This is an interactive game for web browsers that dynamically updates as users p
 * A random number between 19-120 is generated at the start of each game
 * Click on any of the four (4) crystals on the left to add points to your score
   * Each of the crystals will have a random value between 1-12 
-* You will not know the value of any crystal until after you click it and the value of each crystal will change at the start of each new game
+* You will not know the value of any crystal until after you click it
+  * The value of each crystal will change at the start of each new game
 * Win the game by clicking the right combination of crystals whose values, when summed, equal the random number
-* You'll lose the game whenever your score exceeds the random number.
+  * You'll lose the game whenever your score exceeds the random number
+* Win or lose, the board automatically resets at the end of each game
+
+## Technologies
+* HTML5
+* CSS3
+* JavaScript
+* jQuery
+* Bootstrap
 
 ## Development Details
 
